@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 import { SignupFormData } from "@/types/auth";
 import { AuthFormData, AuthState } from "@/types/auth";
-import { signIn } from "next-auth/react";
+import { signIn } from "@/auth";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 
 export const signup = async (

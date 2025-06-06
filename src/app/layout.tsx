@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import Providers from "@/components/providers";
+import { auth } from "@/auth";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,15 +20,16 @@ export const metadata: Metadata = {
     "Inkline is a platform for creating official paperwork with ease.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await auth();
   return (
     <html lang="en">
       <body className={`${inter.variable} ${geistMono.variable} antialiased`}>
-        <Providers>{children}</Providers>
+        <Providers session={session || undefined}>{children}</Providers>
       </body>
     </html>
   );

@@ -37,11 +37,25 @@ export function LoginForm({
                 <SignInButton method="github" />
                 <SignInButton method="google" />
               </div>
-              <div className="text-center text-sm">
-                Don&apos;t have an account?{" "}
-                <a href="#" className="underline underline-offset-4">
-                  Sign up
-                </a>
+              <div className="text-center text-sm text-muted-foreground">
+                {variant === "login" ? (
+                  <p>
+                    Don&apos;t have an account?{" "}
+                    <a
+                      href="/signup"
+                      className="underline underline-offset-4"
+                    >
+                      Sign up
+                    </a>
+                  </p>
+                ) : (
+                  <p>
+                    Already have an account?{" "}
+                    <a href="/login" className="underline underline-offset-4">
+                      Login
+                    </a>
+                  </p>
+                )}
               </div>
             </div>
           </section>
@@ -50,10 +64,10 @@ export function LoginForm({
           </div>
         </CardContent>
       </Card>
-      <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
+      {/* <div className="text-muted-foreground *:[a]:hover:text-primary text-center text-xs text-balance *:[a]:underline *:[a]:underline-offset-4">
         By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
         and <a href="#">Privacy Policy</a>.
-      </div>
+      </div> */}
     </div>
   );
 }
