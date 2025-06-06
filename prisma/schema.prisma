@@ -16,6 +16,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   Authenticator Authenticator[] // Optional (WebAuthn)
+  password      String? // Optional
 
   // App-specific relations
   documents Document[]
