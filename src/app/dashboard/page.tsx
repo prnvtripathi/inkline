@@ -77,7 +77,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="flex w-full flex-col overflow-hidden">
+    <div className="w-full overflow-hidden">
       <Toolbar
         blocks={blocks}
         setBlocks={setBlocks}

@@ -51,7 +51,7 @@ export function Toolbar({
     defaultTemplates.find((t) => t.name === documentName)?.id || "";
 
   return (
-    <div className="sticky top-16 z-40 flex items-center justify-between gap-4 border-b bg-background/80 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div className="flex items-center justify-between gap-4 border-b bg-background/80 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <h2 className="text-xl font-semibold text-foreground">{documentName}</h2>
       <div className="flex items-center gap-2">
         <Select onValueChange={handleTemplateSelect} value={currentTemplateId}>
