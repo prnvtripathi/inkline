@@ -16,7 +16,7 @@ const blockIcons: {
 
 export function BlockPalette() {
   return (
-    <aside className="h-full w-72 border-r bg-background p-4">
+    <aside className="min-h-screen w-72 border-r bg-background p-4">
       <h3 className="mb-4 text-lg font-semibold text-foreground">
         Available Blocks
       </h3>

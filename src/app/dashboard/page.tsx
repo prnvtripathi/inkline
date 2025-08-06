@@ -43,7 +43,7 @@ export default function DashboardPage() {
   // Load templates from API
   const loadTemplates = async () => {
     if (!session) return;
-    
+
     try {
       const response = await fetch('/api/templates');
       if (response.ok) {
@@ -61,7 +61,7 @@ export default function DashboardPage() {
   // Load default template or empty state
   useEffect(() => {
     setIsClient(true);
-    
+
     // If user is authenticated, load their templates
     if (status === 'authenticated') {
       loadTemplates();
@@ -70,7 +70,7 @@ export default function DashboardPage() {
       const initialTemplate = defaultTemplates.find(
         (t) => t.id === "invoice-template"
       );
-      
+
       if (initialTemplate) {
         setDocumentName(initialTemplate.name);
         const initialBlocks = initialTemplate.blocks.map((block) => ({
@@ -82,7 +82,7 @@ export default function DashboardPage() {
       setIsLoadingTemplates(false);
     }
   }, [status, session]);
-  
+
   // Save current document as a template
   const saveAsTemplate = async () => {
     if (!documentName.trim()) {
@@ -126,7 +126,6 @@ export default function DashboardPage() {
     if (template) {
       setDocumentName(template.name);
       setBlocks(JSON.parse(JSON.stringify(template.blocks))); // Deep copy
-      toast.success(`Loaded template: ${template.name}`);
     }
   };
 
@@ -172,7 +171,7 @@ export default function DashboardPage() {
       </div>
     );
   }
-  
+
   if (status === 'unauthenticated') {
     router.push('/login');
     return null;

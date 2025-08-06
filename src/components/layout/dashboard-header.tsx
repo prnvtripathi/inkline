@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { NavbarLogo } from "../ui/resizable-navbar";
 
 export function DashboardHeader() {

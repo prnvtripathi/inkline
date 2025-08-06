@@ -17,6 +17,7 @@ import type { Block, Template as TemplateType } from "@/lib/types";
 import { FilePlus, Loader2, Save, Trash2, X, LayoutTemplate, Check } from "lucide-react";
 import { toast } from "sonner";
 import { useState, useRef, useEffect, Dispatch, SetStateAction } from "react";
+import { NavbarLogo } from "../ui/resizable-navbar";
 
 interface Template {
   id: string;
@@ -112,7 +113,10 @@ export function Toolbar({
   };
 
   return (
-    <div className="flex items-center justify-between gap-4 border-b bg-background/80 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="flex items-center justify-between gap-4 border-b bg-background/80 p-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="">
+        <NavbarLogo />
+      </div>
       <div className="flex items-center gap-2">
         {isEditing ? (
           <div className="flex items-center gap-1">
@@ -160,7 +164,6 @@ export function Toolbar({
             onOpenChange={setIsTemplateOpen}
           >
             <SelectTrigger className="w-[200px]">
-              <LayoutTemplate className="mr-2 h-4 w-4" />
               <SelectValue placeholder="Load Template" />
             </SelectTrigger>
             <SelectContent>
@@ -229,6 +232,6 @@ export function Toolbar({
           </Button>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
